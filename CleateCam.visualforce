@@ -1,0 +1,117 @@
+<apex:page standardController="CampaignCandidate__c" extensions="CleateCamController"   action="{!ini}" showHeader="false" standardStylesheets="false" sidebar="false"
+      applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ng-app="MobileFrameworksApp">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <title>施策の選択</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+      <!-- Import the Design System style sheet -->
+        <apex:slds />
+    </head>
+
+    <body>
+    <!-- REQUIRED SLDS WRAPPER -->
+      <div class="slds-scope">
+                            
+      <!-- PRIMARY CONTENT WRAPPER -->
+
+      <!-- / PRIMARY CONTENT WRAPPER -->
+      <div class="myapp">
+    <!-- HEADING -->
+      <div class="slds-text-heading_small slds-p-top_medium slds-p-bottom_medium">施策の選択</div>
+    <!-- / HEADING -->
+    
+    <!-- INPUT FIELDS -->
+
+    <!-- / XXXXXX -->
+     <apex:form id="form">
+        <apex:outputPanel rendered="{!screenConF}">
+            <apex:outputText >すでに登録済みです。</apex:outputText>
+        </apex:outputPanel>
+        <apex:pageBlock rendered="{!!screenConF}">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value=" Next " title=" Next " action="{!doNextPage}" />
+            </apex:pageBlockButtons>
+            <apex:selectRadio value="{!SelectCam}" layout="pageDirection" required="true">
+                <apex:selectOptions value="{!items}"/>
+            </apex:selectRadio>
+        </apex:pageBlock>
+    </apex:form>
+
+<!-- / LDSは一旦非表示 -->
+    <!--
+     <apex:form id="form">
+        <apex:outputPanel rendered="{!screenConF}">
+            <apex:outputText >すでに登録済みです。</apex:outputText>
+        </apex:outputPanel>
+        <apex:pageBlock rendered="{!!screenConF}">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value=" Next " title=" Next " action="{!doNextPage}" />
+            </apex:pageBlockButtons>
+            <apex:selectRadio value="{!SelectCam}" layout="pageDirection" required="true" StyleClass="slds-radio">
+                <apex:selectOptions value="{!items}"/>
+            </apex:selectRadio>
+        </apex:pageBlock>
+    </apex:form>
+
+		<div class="slds-form-element__control">
+            <span class="slds-radio">
+              <input type="radio" id="radio-3" value="radio-3" name="options" />
+              <label class="slds-radio__label" for="radio-3">
+                <span class="slds-radio_faux"></span>
+                <span class="slds-form-element__label">{!CamCanList[0].Contents1__c}</span>
+              </label>
+            </span>
+            <span class="slds-radio">
+              <input type="radio" id="radio-4" value="radio-4" name="options" />
+              <label class="slds-radio__label" for="radio-4">
+                <span class="slds-radio_faux"></span>
+                <span class="slds-form-element__label">{!CamCanList[0].Contents2__c}</span>
+              </label>
+            </span>
+            <span class="slds-radio">
+              <input type="radio" id="radio-5" value="radio-5" name="options" />
+              <label class="slds-radio__label" for="radio-5">
+                <span class="slds-radio_faux"></span>
+                <span class="slds-form-element__label">{!CamCanList[0].Contents3__c}</span>
+              </label>
+            </span>
+            <span class="slds-radio">
+              <input type="radio" id="radio-6" value="radio-6" name="options" />
+              <label class="slds-radio__label" for="radio-6">
+                <span class="slds-radio_faux"></span>
+                <span class="slds-form-element__label">{!CamCanList[0].Contents4__c}</span>
+              </label>
+            </span>
+            <span class="slds-radio">
+              <input type="radio" id="radio-7" value="radio-7" name="options" />
+              <label class="slds-radio__label" for="radio-7">
+                <span class="slds-radio_faux"></span>
+                <span class="slds-form-element__label">{!CamCanList[0].Contents5__c}</span>
+              </label>
+            </span>          
+            <span class="slds-radio">
+              <input type="radio" id="radio-8" value="radio-8" name="options" />
+              <label class="slds-radio__label" for="radio-8">
+                <span class="slds-radio_faux"></span>
+                <span class="slds-form-element__label">実施しない</span>
+              </label>
+            </span>           
+          </div>
+                  <br/>        
+          <button class="slds-button slds-button_brand">Next</button>
+     -->
+    
+    <!-- / BUSINESS CARD -->
+    </div>  
+    </div>
+    <!-- / REQUIRED SLDS WRAPPER -->
+
+
+    </body>
+  </html>
+</apex:page>
